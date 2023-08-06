@@ -14,7 +14,6 @@ service BankingSystem {
             post: "/v1/create_user"
             body: "*"
         };
-
     }
 
     rpc LoginUser(LoginUserRequest) returns (LoginUserResponse) {

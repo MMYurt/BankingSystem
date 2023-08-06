@@ -15,7 +15,7 @@ type Server struct {
 	config     util.Config
 }
 
-// NewServer - Creates a new HTTP server
+// NewServer - Creates a new gRPC server
 func NewServer(config util.Config, store *db.Store) (*Server, error) {
 	tokenMaker, err := token.NewJWTMaker(config.TokenSecretKey)
 	if err != nil {
