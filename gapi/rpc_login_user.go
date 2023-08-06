@@ -83,7 +83,7 @@ func validateLoginUserRequest(req *pb.LoginUserRequest) (violations []*errdetail
 	if err := val.ValidateUsername(req.GetUsername()); err != nil {
 		violations = append(violations, fieldViolation("username", err))
 	}
-	if err := val.ValidateUsername(req.GetPassword()); err != nil {
+	if err := val.ValidatePassword(req.GetPassword()); err != nil {
 		violations = append(violations, fieldViolation("password", err))
 	}
 
