@@ -12,7 +12,7 @@ option go_package = "BankingSystem/pb";
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {
     title: "Banking System API";
-    version: "1.0";
+    version: "1.1";
     contact: {
       name: "MMY";
       url: "https://github.com/MMYurt";
@@ -27,12 +27,20 @@ service BankingSystem {
             post: "/v1/create_user"
             body: "*"
         };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            description: "Use this API to create a new user";
+            summary: "Create new user";
+        };
     }
 
     rpc LoginUser(LoginUserRequest) returns (LoginUserResponse) {
         option (google.api.http) = {
             post: "/v1/login_user"
             body: "*"
+        };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            description: "Use this API to login user and get tokens";
+            summary: "Login user";
         };
     } 
 }
