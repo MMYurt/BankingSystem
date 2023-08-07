@@ -87,7 +87,7 @@ func TestUpdateUserOnlyEmail(t *testing.T) {
 
 	require.NoError(t, err)
 	require.NotEqual(t, oldUser.Email, updatedUser.Email)
-	require.Equal(t, newEmail, updatedUser.FullName)
+	require.Equal(t, newEmail, updatedUser.Email)
 	require.Equal(t, oldUser.FullName, updatedUser.FullName)
 	require.Equal(t, oldUser.HashedPassword, updatedUser.HashedPassword)
 }
